@@ -39,7 +39,7 @@ public class EmployeeControllerIntegrationTest extends AbstractContainerBase {
     public void before() {
 
         System.out.println("MongoDB Image Name: " + mongoDBContainer.getImage());
-        System.out.println("MongoDB Docker URL: " + mongoDBContainer.getReplicaSetUrl());
+        System.out.println("MongoDB Docker URL: " + mongoDBContainer.getReplicaSetUrl()); // Get the MongoDB URL from the container and database name test by default
         employeeRepository.deleteAll().block(); // Delete all the data from the repository and block until it is done.
     }
 
