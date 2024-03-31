@@ -1,7 +1,10 @@
 package com.vedha.webflux.repository;
 
 import com.vedha.webflux.entity.Employee;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import org.springframework.data.repository.reactive.ReactiveSortingRepository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
@@ -14,7 +17,11 @@ import reactor.core.publisher.Mono;
  * Mono and Flux are the reactive types provided by Project Reactor.
  * All Methods in ReactiveCrudRepository are asynchronous and return Mono or Flux.
  */
-public interface EmployeeRepository extends ReactiveCrudRepository<Employee, String>{
+public interface EmployeeRepository extends ReactiveCrudRepository<Employee, String>, ReactiveSortingRepository<Employee, String> {
 
     Mono<Long> deleteEmployeeById(String id);
+
+    Mono<Employee> findEmployeeByName(String name);
+
+    Flux<Employee> findAllBy(Pageable pageable);
 }

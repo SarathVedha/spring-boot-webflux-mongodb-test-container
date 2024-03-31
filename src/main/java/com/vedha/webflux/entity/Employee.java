@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,6 +20,10 @@ public class Employee {
     private String id;
 
     private String name;
+
+    private Integer age;
+
+    private LocalDate dob;
 
     private String email;
 }

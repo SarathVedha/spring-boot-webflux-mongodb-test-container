@@ -4,3 +4,12 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://vedha:vedha12%24@dev.qrvz8xo.mongodb.net/mongodb_test?retryWrites=true&w=majority&appName=spring-boot-webflux-testing
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              ReactiveMongoTemplate: DEBUG
